@@ -1,0 +1,39 @@
+﻿
+@model Know_the_Facts.Models.Crud 
+
+@{
+    ViewBag.Title = "Error401";
+}
+
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Quick Facts", "Home", "Cruds", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Index", "Cruds")</li>
+                <li>@Html.ActionLink("Add a Fact", "Create", "Cruds")</li>
+                <li>@Html.ActionLink("View my Facts", "MyData", "Cruds")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Cruds")</li>
+                <li>@Html.ActionLink("Admin Manage", "Adminmanage", "Cruds")</li>
+            </ul>
+            <p class="nav navbar-text navbar-right">Hello, @User.Identity.Name.Split('\\')[1].ToUpper() !</p>
+        </div>
+    </div>
+</div>
+
+<h2>Error 401</h2>        
+        <p> 
+            You do not Have Admin Access to view this page. For any further queries 
+            <address>
+                <strong>Mail:</strong>   <a href="mailto:Knowthefact@here.com">Knowthefact@here.com</a><br />
+            </address>
+            <br />
+        </p>

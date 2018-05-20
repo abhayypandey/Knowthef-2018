@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewBag.Title = "Quick Facts";
+}
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Quick Facts", "Home", "Cruds", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Index", "Cruds")</li>
+                <li>@Html.ActionLink("Add a Fact", "Create", "Cruds")</li>
+                <li>@Html.ActionLink("View my Facts", "MyData", "Cruds")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Cruds")</li>
+                <li>@Html.ActionLink("Admin Manage", "Adminmanage", "Cruds")</li>
+            </ul>
+            <p class="nav navbar-text navbar-right">Hello, @User.Identity.Name.Split('\\')[1].ToUpper() !</p>
+        </div>
+    </div>
+</div>
+
+<center>
+    <div style="align-content:center;">
+        <p style="font-family:Bradley Hand ITC; font-size:200%;">Did You Know?</p>
+        <img class="myslides" id="myimg" src="~/Content/Glass.jpg" style="width:auto; padding:1%;" />
+        <img class="myslides" id="myimg" src="~/Content/Rum.jpg" style="width:auto;  padding:1%;" />
+        <img class="myslides" id="myimg" src="~/Content/Medical.png" style="width:auto;  padding:1%;" />
+        <img class="myslides" id="myimg" src="~/Content/Starbucks.png" style="width:auto;  padding:1%;" />
+        <img class="myslides" id="myimg" src="~/Content/Stepney.jpg" style="width:auto;  padding:1%;" />
+        <img class="myslides" id="myimg" src="~/Content/Port.jpg" style="width:auto;  padding:1%;" />
+        <img class="myslides" id="myimg" src="~/Content/Pasta.jpg" style="width:auto;  padding:1%;" />
+        <img class="myslides" id="myimg" src="~/Content/Nacho.jpg" style="width:auto;  padding:1%;" />
+        <img class="myslides" id="myimg" src="~/Content/Junior College.jpg" style="width:auto;  padding:1%;" />
+        <img class="myslides" id="myimg" src="~/Content/Pension.jpg" style="width:auto; padding:1%;" />
+        <img class="myslides" id="myimg" src="~/Content/Camera.jpg" style="width:auto;  padding:1%;" />
+        <img class="myslides" id="myimg" src="~/Content/Cricket.jpg" style="width:auto;  padding:1%;" />
+        <img class="myslides" id="myimg" src="~/Content/Auto.jpg" style="width:auto; padding:1%;" />
+        <img class="myslides" id="myimg" src="~/Content/Gift.jpg" style="width:auto;  padding:1%;" />
+        <img class="myslides" id="myimg" src="~/Content/Rubber.jpg" style="width:auto;  padding:1%;" />
+        <img class="myslides" id="myimg" src="~/Content/Sandwich.jpg" style="width:auto;  padding:1%;" />
+        <img class="myslides" id="myimg" src="~/Content/Mobile.jpg" style="width:auto;  padding:1%;" />
+        <img class="myslides" id="myimg" src="~/Content/Flat.jpg" style="width:auto; padding:1%;" />
+        <img class="myslides" id="myimg" src="~/Content/Picture.jpg" style="width:auto;  padding:1%;" />
+    </div>
+</center>
+<style>
+    .myslides {
+        display: none;
+    }
+
+    #myimg {
+        height: 100%;
+    }
+</style>
+
+<link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom CSS -->
+
+<link href="~/Content/css/simple-sidebar.css" rel="stylesheet">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<script>
+            $("#menu-toggle").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+</script>
+
+<script>
+            var myIndex = 0;
+            carousel();
+
+            function carousel() {
+                var i;
+                var x = document.getElementsByClassName("myslides");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                myIndex++;
+                if (myIndex > x.length) { myIndex = 1 }
+                x[myIndex - 1].style.display = "block";
+                setTimeout(carousel, 6000); // Change image every 2 seconds
+            }
+</script>
+    
+<noscript style="color:red">Enable Javascript on your Browser for optimum functionality...</noscript>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
